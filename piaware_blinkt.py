@@ -10,12 +10,13 @@ import json
 
 blinkt.set_brightness(0.04)
 
-blinkt.set_all(255,0,255)
-blinkt.show()
-time.sleep(30)
-blinkt.set_all(0,0,0)
-blinkt.show()
-time.sleep(2)
+#time.sleep(3)
+#blinkt.set_all(255,0,255)
+#blinkt.show()
+#time.sleep(30)
+#blinkt.set_all(0,0,0)
+#blinkt.show()
+#time.sleep(2)
 
 def loadin():
     global cpuf
