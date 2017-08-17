@@ -1,5 +1,5 @@
 # piaware_blinkt.py - A Python script to show the status of PiAware visually using a Pimoroni Blinkt on a Raspberry Pi
-# Author: tti0
+# Author: Theodore Tucker
 
 #!/usr/bin/env python
 
@@ -9,6 +9,13 @@ import blinkt
 import json
 
 blinkt.set_brightness(0.04)
+
+blinkt.setall(255,0,255)
+blinkt.show()
+time.sleep(30)
+blinkt.setall(0,0,0)
+blinkt.show()
+time.sleep(2)
 
 def loadin():
     global cpuf
