@@ -94,9 +94,9 @@ def main():
     elif 'red' in mlat:
         statled(3,2)
 
-    if cput > 90:
+    if cput >= 90:
         statled(6,2)
-    elif cput > 75:
+    elif cput >= 75:
         statled(6,1)
     else:
         statled(6,0)
