@@ -92,7 +92,7 @@ sudo nano /etc/rc.local
 ```
 /home/pi/piaware_blinkt/grab.sh &
 sleep 5
-sudo /usr/bin/python /home/pi/blinkt-status/piaware_blinkt.py > /dev/null 2>&1 &
+sudo /usr/bin/python /home/pi/piaware_blinkt/piaware_blinkt.py > /dev/null 2>&1 &
 ```
 
 11. Ensure that the line `exit 0` is still present.
