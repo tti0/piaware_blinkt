@@ -1,39 +1,44 @@
-# piaware_blinkt.py - A Python script to show the status of PiAware visually using a Pimoroni Blinkt on a Raspberry Pi
-# Author: tti0
-
-#!/usr/bin/env python
+#!/usr/bin/python
 
 import colorsys
 import time
 import blinkt
 import json
 
-blinkt.set_brightness(0.04)
-
-#time.sleep(3)
-#blinkt.set_all(255,0,255)
-#blinkt.show()
-#time.sleep(30)
-#blinkt.set_all(0,0,0)
-#blinkt.show()
-#time.sleep(2)
+blinkt.set_brightness(0.1)
 
 def loadin():
-    global cpuf
-    cpuf = open("/sys/class/thermal/thermal_zone0/temp","r")
-    global cput
-    cput = int(cpuf.read())/1000
-
-    with open('status.json') as json_data:
-        d = json.load(json_data)
-        global piaware
-        piaware = str((d["piaware"]))
-        global mlat
-        mlat = str((d["mlat"]))
-	global flightaware        
-	flightaware = str((d["adept"]))
-        global radio
-        radio = str((d["radio"]))
+    try:
+    	global cpuf
+    	cpuf = open("/sys/class/thermal/thermal_zone0/temp","r")
+    	global cput
+    	cput = int(cpuf.read())/1000
+    	with open('/home/pi/piaware_blinkt/status.json') as json_data:
+            d = json.load(json_data)
+            global piaware
+            piaware = str((d["piaware"]))
+            global mlat
+            mlat = str((d["mlat"]))
+	    global flightaware
+	    flightaware = str((d["adept"]))
+            global radio
+            radio = str((d["radio"]))
+    except:
+	time.sleep(2)
+	global cpuf
+        cpuf = open("/sys/class/thermal/thermal_zone0/temp","r")
+        global cput
+        cput = int(cpuf.read())/1000
+        with open('/home/pi/blinkt-status/status.json') as json_data:
+            d = json.load(json_data)
+            global piaware
+            piaware = str((d["piaware"]))
+            global mlat
+            mlat = str((d["mlat"]))
+            global flightaware
+            flightaware = str((d["adept"]))
+            global radio
+            radio = str((d["radio"]))
 
 def whiteon():
     blinkt.set_pixel(7,120,120,200)
@@ -56,10 +61,10 @@ def statled(led, col):
 #led 7 power
 
 def main():
-    print("reload")
+    #print("reload")
     whiteon()
     loadin()
-    print(cput)
+    #print(cput)
 
     if 'green' in radio:
         statled(0,0)
@@ -99,13 +104,10 @@ def main():
     time.sleep(5)
     loadin()
 
-
 loadin()
 while True:
     try:
-        print("Try run")
-	main()
+        main()
     except:
-        print("Except run")
         time.sleep(3)
         main()
