@@ -1,7 +1,7 @@
 # piaware_blinkt
 A Python script to show the status of PiAware visually using a Pimoroni Blinkt on a Raspberry Pi.
 
-<img src="https://s31.postimg.cc/7s59cbl9n/piaware_demo.jpg" height="50%" />
+<img src="https://s31.postimg.cc/7s59cbl9n/piaware_demo.jpg" height="30%" />
 
 *Demo above: I've added a sheet of paper with LED descriptors to my clear Raspberry Pi case.*
 
