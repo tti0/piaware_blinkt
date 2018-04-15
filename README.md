@@ -11,7 +11,9 @@ This project is licensed under the terms of the MIT License. See the file https:
 This work is copyright 2018 tti0 (https://github.com/tti0).
 
 ## About
-If you have a Raspberry Pi, running the flight tracking software PiAware (https://flightaware.com/adsb/piaware/), by navigating to the web server on the Raspberry Pi, one can view the status of four different parts of PiAware: **Radio**, **PiAware**, **FlightAware** and **MLAT**. On the web server, the status of these can be **red**, **yellow** or **green**. These colours are replicated on the LEDs of the Pimoroni Blinkt (https://shop.pimoroni.com/products/blinkt), an inexpensive (~ 5GBP / 6USD) LED add-on board for the Raspberry Pi. The table below shows the use of each LED on the Blinkt board. LEDs are numbered in the table as in the official Blinkt Python library.
+If you have a Raspberry Pi, running the flight tracking software PiAware (https://flightaware.com/adsb/piaware/), by navigating to the web server on the Raspberry Pi, one can view the status of four different parts of PiAware: **Radio**, **PiAware**, **FlightAware** and **MLAT**. On the web server, the status of these can be **red**, **yellow** or **green**.
+
+This script replicates the colours of the website on the LEDs of the Pimoroni Blinkt (https://shop.pimoroni.com/products/blinkt), an inexpensive (~ 5GBP / 6USD) LED add-on board for the Raspberry Pi. The table below shows the use of each LED on the Blinkt board. LEDs are numbered in the table as in the official Blinkt Python library.
 
 | LED # | Use                                                            |
 |-------|----------------------------------------------------------------|
