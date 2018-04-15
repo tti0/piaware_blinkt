@@ -36,7 +36,7 @@ For the CPU indicator, the colour to temperature correlation is as follows:
 
 The system is made up from two parts `grab.sh` and `piaware_blinkt.py`. `grab.sh` loads the latest status from PiAware every 2 seconds as JSON data, using `curl`. `piaware_blinkt.py` is a Python script which interprets the data from JSON, loads in the latest CPU temperature and sets the LEDs accordingly.
 
-Note that the Blinkt LEDs will remain on after system shutdown, for as long as the power supply is connected the the Raspberry Pi.
+Note that the Blinkt LEDs will remain on after system shutdown, for as long as the power supply is connected to the Raspberry Pi.
 
 ## Setup Instructions
 
@@ -44,11 +44,11 @@ Note that the Blinkt LEDs will remain on after system shutdown, for as long as t
 - Your Raspberry Pi has an internet connection.
 
 ### Setup
-*For all steps in this guide, answer "Yes" or "Y" if prompted by the Linux shell.*
+*For all steps in this guide, answer "Yes" or "Y" if prompted by the Linux shell. All steps should be completed as the user `pi`.*
 
 1. If you have not done so already, set up PiAware on your Raspberry Pi. Follow the instructions in the links below if you have not. There are two possible ways to set up PiAware.
-  1. Use the PiAware SD card image: https://flightaware.com/adsb/piaware/build (step 2 of this guide)
-  2. Set up PiAware on a standard Raspbian installation: https://flightaware.com/adsb/piaware/install
+    + Use the PiAware SD card image: https://flightaware.com/adsb/piaware/build (step 2 of this guide)
+    + Set up PiAware on a standard Raspbian installation: https://flightaware.com/adsb/piaware/install
 
 2. Gain access to the shell of your Raspberry Pi as the user `pi`. To do this, you can either connect to the Raspberry Pi using SSH (https://www.raspberrypi.org/documentation/remote-access/ssh), or connect a keyboard and monitor to the Raspberry Pi. If you are using the PiAware SD card image, the default password for the `pi` user is `flightaware`. For Raspbian, the default password for the `pi` user is `raspberry`.
 
