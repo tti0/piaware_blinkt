@@ -11,7 +11,7 @@ This project is licensed under the terms of the MIT License. See the file https:
 This work is copyright 2018 tti0 (https://github.com/tti0).
 
 ## About
-If you have a Raspberry Pi, running the flight tracking software PiAware (https://flightaware.com/adsb/piaware/), by navigating to the web server on the Raspberry Pi, one can view the status of four different parts of PiAware: **Radio**, **PiAware**, **FlightAware** and **MLAT**. On the web server, the status of these can be **red**, **yellow** or **green**.
+If you have a Raspberry Pi, running the flight tracking software PiAware (https://flightaware.com/adsb/piaware/), by navigating to the web server on the Raspberry Pi, one can view the status of four different parts of PiAware: **Radio**, **PiAware**, **FlightAware**, and **MLAT**. On the web server, the status of these can be **red**, **yellow** or **green**.
 
 This script replicates the colours of the website on the LEDs of the Pimoroni Blinkt (https://shop.pimoroni.com/products/blinkt), an inexpensive (~ 5GBP / 6USD) LED add-on board for the Raspberry Pi. The table below shows the use of each LED on the Blinkt board. LEDs are numbered in the table as in the official Blinkt Python library.
 
@@ -36,9 +36,11 @@ For the CPU indicator, the colour to temperature correlation is as follows:
 
 *90°C is the absolute maximum rated CPU temperature for a Raspberry Pi. You should manually shut your Raspberry Pi down if the CPU temperature indicator LED turns red.*
 
-The system is made up from two parts `grab.sh` and `piaware_blinkt.py`. `grab.sh` loads the latest status from PiAware every 2 seconds as JSON data, using `curl`. `piaware_blinkt.py` is a Python script which interprets the data from JSON, loads in the latest CPU temperature and sets the LEDs accordingly.
+The system is made up from two parts `grab.sh` and `piaware_blinkt.py`. `grab.sh` loads the latest status from PiAware every 2 seconds as JSON data, using `curl`. `piaware_blinkt.py` is a Python script which interprets the data from JSON, loads in the latest CPU temperature, and sets the LEDs accordingly.
 
 Note that the Blinkt LEDs will remain on after system shutdown, for as long as the power supply is connected to the Raspberry Pi.
+
+This script should be compatible with all versions of the Raspberry Pi and Raspbian which support the Pimoroni Blinkt (i.e. RPis with a 40-pin GPIO header), the Blinkt Python library, and PiAware.
 
 ## Setup Instructions
 
@@ -49,7 +51,7 @@ Note that the Blinkt LEDs will remain on after system shutdown, for as long as t
 *For all steps in this guide, answer "Yes" or "Y" if prompted by the Linux shell. All steps should be completed as the user `pi`.*
 
 1. If you have not done so already, set up PiAware on your Raspberry Pi. Follow the instructions in the links below if you have not. There are two possible ways to set up PiAware.
-    + Use the PiAware SD card image: https://flightaware.com/adsb/piaware/build (step 2 of this guide)
+    + Use the PiAware SD card image: https://flightaware.com/adsb/piaware/build (see step 2 of the linked guide)
     + Set up PiAware on a standard Raspbian installation: https://flightaware.com/adsb/piaware/install
 
 2. Gain access to the shell of your Raspberry Pi as the user `pi`. To do this, you can either connect to the Raspberry Pi using SSH (https://www.raspberrypi.org/documentation/remote-access/ssh), or connect a keyboard and monitor to the Raspberry Pi. If you are using the PiAware SD card image, the default password for the `pi` user is `flightaware`. For Raspbian, the default password for the `pi` user is `raspberry`.
