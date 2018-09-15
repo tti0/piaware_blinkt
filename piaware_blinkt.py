@@ -8,7 +8,7 @@ def loadin():
     cpuf = open("/sys/class/thermal/thermal_zone0/temp", "r")
     global cput
     cput = int(cpuf.read())/1000
-    with open('/home/pi/piaware_blinkt/status.json') as json_data:
+    with open('/run/piaware/status.json') as json_data:
         d = json.load(json_data)
         global piaware
         piaware = str((d["piaware"]))

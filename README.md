@@ -78,11 +78,8 @@ sudo apt-get install git
 git clone https://github.com/tti0/piaware_blinkt
 ```
 
-8. Add execute permissions to the code files with the commands:
-```
-sudo chmod 777 piaware_blinkt/grab.sh
-```
-and
+8. Add execute permissions to the code file with the command:
+
 ```
 sudo chmod 777 piaware_blinkt/piaware_blinkt.py
 ```
@@ -94,8 +91,6 @@ sudo nano /etc/rc.local
 
 10. In `nano`, use the arrow keys to the line above `exit 0`, and add the following code:
 ```
-/home/pi/piaware_blinkt/grab.sh &
-sleep 5
 sudo /usr/bin/python /home/pi/piaware_blinkt/piaware_blinkt.py > /dev/null 2>&1 &
 ```
 
