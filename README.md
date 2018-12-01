@@ -91,7 +91,7 @@ sudo nano /etc/rc.local
 
 10. In `nano`, use the arrow keys to the line above `exit 0`, and add the following code:
 ```
-sudo /usr/bin/python /home/pi/piaware_blinkt/piaware_blinkt.py > /dev/null 2>&1 &
+/usr/bin/python3 /home/pi/piaware_blinkt/piaware_blinkt.py &
 ```
 
 11. Ensure that the line `exit 0` is still present.

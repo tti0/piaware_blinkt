@@ -1,6 +1,11 @@
 #!/usr/bin/python
 
 import colorsys, time, json, blinkt
+
+# wait 10 seconds before launching to give PiAware time to load
+
+time.sleep(10)
+
 blinkt.set_brightness(0.1)
 
 def loadin():
